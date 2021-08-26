@@ -34,8 +34,8 @@ class Solution {
         			right_leng += 1;
         		}
         		right_leng += abc;
-        		System.out.println("left : " + left_leng);
-        		System.out.println("right : " + right_leng);
+        		//System.out.println("left : " + left_leng);
+        		//System.out.println("right : " + right_leng);
         		if(left_leng<right_leng) {
         			answer+="L";
         			left_state = numbers[i];
@@ -55,7 +55,7 @@ class Solution {
         			}
         		}
         	}
-        	System.out.println(answer);
+        	//System.out.println(answer);
         }
         return answer;
     }
