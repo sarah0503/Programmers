@@ -9,53 +9,30 @@ class Solution {
         int a_score = 0;
         int b_score = 0;
         int c_score = 0;
-        //a계산
-        for(int i = 0; i<5 ; i++) {
-        	if(a[i] == answers[i]) a_score ++;
+        int length = answers.length;
+        //a정답
+        for(int i = 0; i<length; i++) {
+        	int now = i%5;
+        	if( a[now] == answers[i]) a_score++;
         }
-        a_score = a_score *8;
-        int [] temp_answers = new int[40];
-        //c계산
-        for(int i = 0 ;i<2; i++) {
-        	for(int j = 0; j<5 ;j++) {
-        		temp_answers[i*5 + j] = answers[j];
-        		//System.out.println(temp_answers[i*5 + j]);
-        	}
+        //b정답 
+        for(int i = 0; i<length; i++) {
+        	int now = i%8;
+        	if( b[now] == answers[i]) b_score++;
         }
-        for(int i = 0; i<10; i++) {
-        	if(c[i] == temp_answers[i]) c_score ++;
-        	System.out.println(c[i]);
-        	System.out.println(temp_answers[i]);
-        	System.out.println();
+        //c정답
+        for(int i = 0; i<length; i++) {
+        	int now = i%10;
+        	if( c[now] == answers[i]) c_score++;
         }
-        c_score = c_score*4;
-        //b계산
-        for(int i = 0 ;i<4; i++) {
-        	for(int j = 0; j<10 ;j++) {
-        		temp_answers[i*10 + j] = temp_answers[j];
-        		//System.out.println(temp_answers[i*10 + j]);
-        	}
-        }
-        int [] temp_b = new int[40];
-        for(int i = 0 ;i<5; i++) {
-        	for(int j = 0; j<8 ;j++) {
-        		temp_b[i*8 + j] = b[j];
-        	}
-        }       
         
-        for(int i = 0; i<40; i++) {
-        	if(temp_b[i] == temp_answers[i]) b_score ++;
-        }
-        System.out.println(a_score);
-        System.out.println(b_score);
-        System.out.println(c_score);
         if( a_score >= b_score) {
         	if(a_score >= c_score) {
         		if(a_score == c_score) {
         			answer.add(1);
         			answer.add(3);
         		}
-    			answer.add(1);
+        		else answer.add(1);
         	}
         	else {
         		answer.add(3);
@@ -69,7 +46,7 @@ class Solution {
         			answer.add(2);
         			answer.add(3);
         		}
-        		answer.add(2);
+        		else answer.add(2);
         	}
         	else answer.add(3);
         }
@@ -77,10 +54,5 @@ class Solution {
         return answer;
     }
     
-    public static void main(String[] args) {
-		Solution s = new Solution();
-		int[] arg = {1,3,2,4,2};
-		//s.solution(arg);
-		System.out.println(s.solution(arg));
-	}
 }
+
