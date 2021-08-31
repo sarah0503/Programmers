@@ -20,16 +20,10 @@ class Solution {
 				}
 			}
 		}
-//		////
-//		for(int i = 0; i<temp.size(); i++) {
-//			System.out.println(temp.get(i));
-//		}
-//		////
-		for (int i = 0; i < lost.length;  i++) {
-			if(temp.indexOf(lost[i]) != -1)    
-			for (int j = 0; j < reserve.length-1; j++) {
+		for (int i = 0; i < lost.length; i++) {  
+			for (int j = 0; j < reserve.length; j++) {
 				int num = Math.abs(lost[i] - reserve[j]);
-				if (num == 1) {
+				if (num == 1 && temp.indexOf(lost[i]) == -1) {
 					lost_people--;
 					reserve[j] = -10;
 					break;
@@ -43,8 +37,8 @@ class Solution {
 
 	public static void main(String[] args) {
 		int n = 5;
-		int[] lost = { 2, 4,3  };
-		int[] reserve = { 1,3, 5 };
+		int[] lost = { 2, 4 };
+		int[] reserve = { 1, 3, 5 };
 		Solution s = new Solution();
 		// s.solution(n, lost, reserve);
 		System.out.println(s.solution(n, lost, reserve));
