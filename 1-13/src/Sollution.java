@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 class Solution {
     public String solution(String[] tables, String[] languages, int[] preference) {
@@ -33,7 +35,7 @@ class Solution {
         	PORTAL.put(tables[3].split(" ")[j], 6-j);
         }
         for(int j = 1; j<6; j++) {
-         	GAME.put(tables[0].split(" ")[j], 6-j);
+         	GAME.put(tables[4].split(" ")[j], 6-j);
         }
         
         //언어 넣기
@@ -57,9 +59,6 @@ class Solution {
         			si += SI.get(languages[i]) * pre.get(languages[i]);
         		}
         	}
-//        	Integer value = (Integer)SI.get(key);
-//        	System.out.println(key + " " + value);
-//        	System.out.println(si);
         }
         iter = CONTENTS.keySet().iterator();
         while(iter.hasNext()) {
@@ -98,16 +97,25 @@ class Solution {
         	}
         }
         
+        Map <String, Integer> SCORE = new HashMap<String, Integer>();
+        SCORE.put("SI",si);
+        SCORE.put("CONTENTS", contents);
+        SCORE.put("HARDWARE", hardware);
+        SCORE.put("PORTAL", portal);
+        SCORE.put("GAME", game);
+        
+        ArrayList<String> answers = new ArrayList<String> ();
+        int maxValue = Collections.max(SCORE.values());
+        for(Map.Entry<String, Integer> m : SCORE.entrySet()) {
+        	if(m.getValue() == maxValue) {
+        		answers.add(m.getKey());
+        	
+        	}
+        }
+        Collections.sort(answers);
+        answer = answers.get(0);
         
         
         return answer;
     }
-    public static void main(String[] args) {
-    	Solution s = new Solution();
-    	String [] tables = {"SI JAVA JAVASCRIPT SQL PYTHON C#", "CONTENTS JAVASCRIPT JAVA PYTHON SQL C++", "HARDWARE C C++ PYTHON JAVA JAVASCRIPT", "PORTAL JAVA JAVASCRIPT PYTHON KOTLIN PHP", "GAME C++ C# JAVASCRIPT C JAVA"};
-		String [] languages = {"PYTHON", "C++", "SQL"};
-		int [] preference = {7, 5, 5};
-    	s.solution(tables, languages, preference);
-	}
-    
 }
