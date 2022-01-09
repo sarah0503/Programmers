@@ -16,16 +16,16 @@ class Solution {
         			fail_count ++;
         	}
         	//System.out.println(fail_count);
-        	if(ch_count == 0.0) {
-        		count = 1;
-        	}
-        	else {
+//        	if(ch_count < 0.0) {
+//        		count = 0;
+//        	}
+//        	else {
         	count = (fail_count) / ch_count;
         	//System.out.println(ch_count);
         	//System.out.println(count);
             //System.out.println(fail_count + " " + ch_count);
         	ch_count -= fail_count;
-        	}
+//        	}
         	//fail.put(i+1, count); 
         	fail.add(count);
         }
@@ -74,6 +74,10 @@ class Solution {
         	if (answer.get(i) == N+1) {
         		answer.remove(i);
         	}
+        	//System.out.println(answer.get(i));
+        }
+        
+        for (int i = 0; i<answer.size()-1 ; i++) {
         	System.out.println(answer.get(i));
         }
         return answer;
