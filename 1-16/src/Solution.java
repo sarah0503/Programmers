@@ -1,11 +1,11 @@
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class Solution {
 	public int solution (int numbers[]) {
 		int answer = 45;
-		for(int i = 0; i<numbers.length; i++) {
-			answer -= numbers[i];
-		}
+		int sum =  IntStream.of(numbers).sum();
+		answer -= sum;
 		System.out.println(answer);
 		return answer;
 	}
