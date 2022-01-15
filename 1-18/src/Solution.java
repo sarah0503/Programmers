@@ -20,37 +20,20 @@ public class Solution {
         	answer[i] = 0;
         }
         //경고 누적
-//        for(int i = 0; i<report.size(); i++) {
-//        	String people = report[i].split(" ")[1];
-//        	int num = people_map.get(people) + 1;
-//        	people_map.put(people, num);
-//        }
-        
+     
        Iterator <String> it1 = report.iterator();
        while(it1.hasNext()) {
     	   String r = it1.next().toString();
-    	   System.out.println(r);
     	   String people = r.split(" ")[1];
 	       int num = people_map.get(people) + 1;
 	       people_map.put(people, num);
-	       System.out.println(num);
        }
         
-//        for(int i = 0; i<report.size();i++) {
-//        	String person2 = report[i].split(" ")[1];
-//        	if(people_map.get(person2) >= k) {
-//        		String person1 = report[i].split(" ")[0];
-//        		int num = people_number.get(person1);
-//        		answer[num] ++;
-//        	}
-//        }
        
-       System.out.println();
        
        Iterator <String> it2 = report.iterator();
        while(it2.hasNext()) {
     	   String r = it2.next().toString();
-    	   System.out.println(r);
     	   String person2 = r.split(" ")[1];
     	   if(people_map.get(person2) >= k) {
     		   String person1 = r.split(" ")[0];
@@ -58,10 +41,6 @@ public class Solution {
        			answer[num]++;
     	   }
        }
-        
-        for(int i = 0; i<answer.length;i++) {
-        	System.out.println(answer[i]);
-        }
         return answer;
     }
 	public static void main(String[] args) {
