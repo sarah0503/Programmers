@@ -33,6 +33,7 @@ public class Solution {
     	   String people = r.split(" ")[1];
 	       int num = people_map.get(people) + 1;
 	       people_map.put(people, num);
+	       System.out.println(num);
        }
         
 //        for(int i = 0; i<report.size();i++) {
@@ -44,14 +45,17 @@ public class Solution {
 //        	}
 //        }
        
+       System.out.println();
+       
        Iterator <String> it2 = report.iterator();
-       while(it1.hasNext()) {
+       while(it2.hasNext()) {
     	   String r = it2.next().toString();
+    	   System.out.println(r);
     	   String person2 = r.split(" ")[1];
     	   if(people_map.get(person2) >= k) {
     		   String person1 = r.split(" ")[0];
        			int num = people_number.get(person1);
-       			answer[num] ++;
+       			answer[num]++;
     	   }
        }
         
@@ -65,7 +69,7 @@ public class Solution {
 		String [] id_list = {"muzi", "frodo", "apeach", "neo"};
 		String [] report = {"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
 		Solution s = new Solution();
-		s.solution(id_list, report, 3);
+		s.solution(id_list, report, 2);
 	}
 
 }
