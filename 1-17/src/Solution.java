@@ -7,7 +7,6 @@ public class Solution {
             int count = 0;
         for(int i = 1; i<k+1; i++) {
         	if(k%i == 0) {
-        		System.out.println(i);
         		count ++;
         	}
         }
@@ -18,11 +17,7 @@ public class Solution {
         else {
         	answer -= k;
         }
-        System.out.println(answer);
         }
-//        System.out.println();
-//    	System.out.println(count);
-        System.out.println(answer);
         return answer;
     }
 
