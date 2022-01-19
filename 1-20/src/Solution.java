@@ -29,6 +29,5 @@ class Solution {
 		int[] numbers = {2,1,3,4,1};
 		Solution s = new Solution();
 		int [] result = s.solution(numbers);
-		System.out.println(result);
 	}
 }
