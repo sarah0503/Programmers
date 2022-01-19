@@ -3,12 +3,12 @@ public class Solution {
 	
     public long solution(int price, int money, int count) {
         long answer = -1;
-        int total = 0;
+        long total = 0;
         for(int i = 1; i<count+1; i++) {
         	total += i*price;
         }
-        System.out.println(total);
         answer = total - money;
+        if(answer <= 0) return 0;
         return answer;
     }
     
