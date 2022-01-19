@@ -3,7 +3,6 @@ public class Solution {
 	
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String [n];
-        long maxBin = (2^n) -1;
         int[][] arr1Bin = new int[n][n];
         int [][] arr2Bin = new int [n][n];
         
@@ -39,12 +38,10 @@ public class Solution {
         		if(arr1Bin[i][j] == 1|| arr2Bin[i][j] == 1) {
         			//answer[i].concat("#");
         			answer[i] = answer[i] + "#";
-        			System.out.println("중");
         		}
         		else {
         			//answer[i].concat(" ");
         			answer[i] = answer[i] + " ";
-        			System.out.println("뿡");
         		}
         	}
         }
