@@ -11,18 +11,13 @@ public class Solution {
         		sizes[i][0] = sizes[i][1];
         		sizes[i][1] = temp;
         	}
-//        	for(int j = 0; j<sizes[0].length; j++) {
-//        		
-//        	}
+        	
         	if(sizes[i][0] > maxWidth) maxWidth = sizes[i][0];
         	if(sizes[i][1] > maxHeight ) maxHeight = sizes[i][1];
         }
         
         answer = maxWidth * maxHeight;
         
-        
-        System.out.println(maxWidth);
-        System.out.println(maxHeight);
         return answer;
     }
     
