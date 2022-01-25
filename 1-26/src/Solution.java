@@ -18,15 +18,12 @@ public class Solution {
         
         while (true) {
         	int temp = (int) Math.pow(3 , k-1);
-        	//System.out.println(temp + " " + n);
         	if(n >= temp) {
         		n -= temp;
         		array[k-1] ++;
-        		//System.out.println("K : " + temp);
         	}
         	else {
         		k--;
-        		//System.out.println("sd");
         	}
         	if(n <= 0) break;
         }
@@ -37,11 +34,6 @@ public class Solution {
         	answer += Math.pow(3, max - i - 1);
         	}
         }
-        
-        
-        
-        
-        
         return answer;
     }
     
