@@ -6,11 +6,8 @@ public class Solution {
 		int answers[] = new int[3];
 		String[] results = dartResult.split("\\d");
 		String dartNums = dartResult.replaceAll("[^0-9]", "");
-		System.out.println(dartNums.charAt(1));
-
-		for (int i = 0; i < 4; i++) {
-			System.out.println(results[i]);
-		}
+		
+		System.out.println(dartNums);
 
 		// for(String s: results) {
 		for (int i = 0; i < 3; i++) {
@@ -42,7 +39,7 @@ public class Solution {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String dartResult = "1S2D*3T";
+		String dartResult = "1D2S#10S";
 		Solution s = new Solution();
 		System.out.println();
 		System.out.println(s.solution(dartResult));
