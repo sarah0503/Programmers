@@ -14,23 +14,15 @@ public class Solution {
 				resultList.add(results[i]);
 			}
 		}
-		//String dartNums = dartResult.replaceAll("[^0-9]", "");
 		String[] dartNums = dartResult.split("[A-Z]");
 		for(int i = 0; i<dartNums.length; i++) {
 			dartNums[i] = dartNums[i].replaceAll("[^0-9]", "");
 		}
 		
 		Iterator iter = resultList.iterator();
-		
-//		while(iter.hasNext()) {
-//			System.out.println("결과 " + iter.next());
-//		}
 
-		// for(String s: results) {
 		for (int i = 0; i < 3; i++) {
-			//String s = results[i + 1];
 			String s = (String) iter.next();
-			//System.out.println(s + " ㅋ");
 			answers[i] = square(Character.toString(s.charAt(0)),
 					Integer.parseInt((dartNums[i]
 							)));
@@ -65,13 +57,10 @@ public class Solution {
 
 	public int square(String s, int num) {
 		if (s.equals("S")) {
-			//System.out.println(num);
 			return num;
 		} else if (s.equals("D")) {
-			//System.out.println(num * num);
 			return num * num;
 		} else {
-			//System.out.println(num * num * num);
 			return num * num * num;
 		}
 
