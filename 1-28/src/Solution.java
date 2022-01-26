@@ -59,9 +59,9 @@ public class Solution {
 		if (s.equals("S")) {
 			return num;
 		} else if (s.equals("D")) {
-			return num * num;
+			return (int) Math.pow(num,2);
 		} else {
-			return num * num * num;
+			return (int) Math.pow(num, 3);
 		}
 
 	}
