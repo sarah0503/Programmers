@@ -9,18 +9,23 @@ public class Solution {
 	   public int[] solution(int [] arr) {
 	        int [] answer = {};
 	        //List<Integer> arrayList = Arrays.asList(arr);
-	        //Set<int[]> set = new HashSet<> (arrayList);
 	        
-	        ArrayList <Integer> arrayList = new ArrayList<>(Arrays.asList((Integer[])arr));
+	        
+	        //ArrayList <Integer> arrayList = (ArrayList<Integer>) (Arrays.asList(arr));
+	        Set<int[]> set = new HashSet<> (Arrays.asList(arr));
 	        	
 	        Iterator<int[]> it = set.iterator();
 	        
-	        int i = 0;
-	        while(it.hasNext()) {
-	        	//answer[i] = it.next();
-	        	System.out.println(it.next());
-	        	i++;
-	        }
+//	        int i = 0;
+//	        while(it.hasNext()) {
+//	        	answer[i] = it.next();
+//	        	System.out.println(it.next());
+//	        	i++;
+//	        }
+	        
+	        Integer[] array = set.toArray(new Integer[0]);
+	        
+	        System.out.println(Arrays.toString(array));
 	       
 	        return answer;
 	    }
@@ -31,7 +36,7 @@ public class Solution {
 		   int [] arr = {1,1,3,3,0,1,1};
 		  int[] newArr = s.solution(arr);
 		  for(int i = 0; i<newArr.length; i++) {
-			  //System.out.println(newArr[i]);
+			  System.out.println(newArr[i]);
 		  }
 	}
 }
