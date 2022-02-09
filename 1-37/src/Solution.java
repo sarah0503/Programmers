@@ -1,25 +1,23 @@
+import java.util.Arrays;
 
 public class Solution {
     public int solution(int n) {
     	int answer = 0;
-    	boolean[] pri = new boolean[n];
-    	pri[0] = true;
+    	int[] pri = new int[n];
+    	Arrays.fill(pri, 0);
+    	pri[0] = 1;
     	
     	for(int i = 2; i<Math.sqrt(n); i++) {
-    		if(pri[i-1] == false) {
-    			for(int j = i+1; j<=n; j++) {
-    				if(j%i == 0) {
-    					pri[j-1] = true;
-    					System.out.println(j);
-    				}
+    		if(pri[i-1] == 0) {
+    			for(int j = i*2; j<=n; j += i) {
+    				pri[j-1] = 1;
     			}
     		}
     	}
     	
     	for(int i = 0; i<n; i++) {
-    		if(pri[i] == false) answer++;
+    		if(pri[i] == 0) answer++;
     	}
-    	
         return answer;
     }
     
