@@ -1,7 +1,7 @@
 
 public class Solution {
     public int[] solution(int n, int m) {
-        int[] answer = {};
+        int[] answer = new int[2];
         int lcm = 1; //최소공배수 
         int gcd = 0; //최대공약
         int tempN = n;
@@ -15,17 +15,16 @@ public class Solution {
     			break;
     		}
         	if((n%i) == 0 && (m%i) == 0) {
-        		System.out.println("뿡");
         		lcm *= i;
         		n /= i;
         		m /=i;
-        		System.out.println(lcm);
         		i=1;
         	}
         	i++;
         }
-        
-        System.out.println(lcm);
+        gcd = tempN * tempM / lcm;
+        answer[0] = gcd;
+        answer[1] = lcm;
         return answer;
     }
     
