@@ -26,6 +26,11 @@ public class Solution {
 					nicknames.put(record[1], record[2]);
 				}
 			} else {
+				if (nicknames.containsKey(record[1])) {
+					;
+				} else {
+					nicknames.put(record[1], record[2]);
+				}
 				count++;
 			}
 			answer = new String[count];
