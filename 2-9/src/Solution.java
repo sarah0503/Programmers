@@ -1,7 +1,7 @@
 
 public class Solution {
     public int[] solution(int rows, int columns, int[][] queries) {
-        int[] answer = {};
+        int[] answer = new int [queries.length];
         int[][] numbers = new int[columns][rows];
         
         for(int i = 0; i< rows; i++) {
@@ -55,6 +55,7 @@ public class Solution {
         
             			
             System.out.println("min = " + min);
+            answer[i] = min;
         }
 
           
